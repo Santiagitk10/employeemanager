@@ -16,10 +16,12 @@ public class EmployeemanagerApplication {
 		SpringApplication.run(EmployeemanagerApplication.class, args);
 	}
 
+	//Configuaración para no tener error de CORS
 	@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
+		//El origen de la aplicación front end que se conecta
 		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 				"Accept", "Authorization", "Origin, Accept", "X-Requested-With",
